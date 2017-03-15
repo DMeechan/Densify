@@ -1,0 +1,6 @@
+.idea
+.ini
+build
+._*
+.DS_Store
+/out

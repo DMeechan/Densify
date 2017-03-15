@@ -1,0 +1,17 @@
+.root {
+
+    -fx-light-text-color: -fx-text-base-color;
+    -fx-text-base-color: rgb(238, 244, 255);
+    -fx-background: rgb(52, 60, 73);
+    -fx-text-fill: -fx-text-base-color;
+    -fx-base: rgb(46, 52, 64);
+
+    /*
+    base = background colour for most elements, like listview, slider, buttons, colour picker, slider etc.
+    background = background colour for navigation bar and edit menu
+    text base colour has minmal effect - only a small amount of text
+    */
+
+
+}
+
