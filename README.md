@@ -1,2 +1,4 @@
 # Densify
-Shorting whole films down into a single image
+Condensing entire films and videos into a single image.
+
+Will soon have download link up.
