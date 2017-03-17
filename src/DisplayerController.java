@@ -8,19 +8,23 @@ public class DisplayerController implements Initializable {
 	private BooleanProperty sceneActive;
 
 	public DisplayerController() {
-		
-	}
-	
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		
-	}
-	
-	public BooleanProperty getSceneActive() {
-		return this.sceneActive;
+
 	}
 
-	public void setSceneActive(BooleanProperty sceneActive) {
-		this.sceneActive = sceneActive;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+	}
+
+	public boolean isSceneActive() {
+		return sceneActive.get();
+	}
+
+	public BooleanProperty sceneActiveProperty() {
+		return sceneActive;
+	}
+
+	public void setSceneActive(boolean sceneActive) {
+		this.sceneActive.set(sceneActive);
 	}
 }

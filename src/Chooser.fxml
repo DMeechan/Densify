@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<VBox fx:id="container" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" spacing="40.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChooserController">
+  <children>
+      <Button fx:id="pickVideoButton" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#pickVideo" text="PICK FILM" textAlignment="CENTER" />
+      <TextField fx:id="nameField" alignment="CENTER" maxWidth="1.7976931348623157E308" promptText="Name" />
+      <Label fx:id="lengthText" alignment="CENTER" ellipsisString="-" maxWidth="1.7976931348623157E308" text="Length" textAlignment="CENTER" />
+      <Label fx:id="locationText" alignment="CENTER" maxWidth="1.7976931348623157E308" text="File Location" />
+      <Button fx:id="runButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#run" text="DENSIFY" textAlignment="CENTER" />
+  </children>
+  <stylesheets>
+    <URL value="@BasicApplication.css" />
+  </stylesheets>
+   <padding>
+      <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+   </padding>
+</VBox>
