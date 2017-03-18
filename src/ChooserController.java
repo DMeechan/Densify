@@ -30,7 +30,7 @@ public class ChooserController implements Initializable {
 		com.sun.media.jfxmedia.track.VideoTrack videoTrack = null;
 		// need to fix this video track part
 
-		selectedVideo = new Video(videoTrack, "");
+		//selectedVideo = new Video(videoTrack, "");
 		selectedVideo.nameProperty().bind(nameField.textProperty());
 		nameField.setText(selectedVideo.getName());
 		lengthText.setText("");
