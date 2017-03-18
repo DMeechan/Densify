@@ -1,18 +1,44 @@
-import com.sun.media.jfxmedia.track.VideoTrack;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import marvin.image.MarvinImage;
+import marvin.video.MarvinJavaCVAdapter;
+import marvin.video.MarvinVideoInterface;
+import marvin.video.MarvinVideoInterfaceException;
 
 public class Video {
 	private int length;
 	private StringProperty name = new SimpleStringProperty("");
 	private String location;
-	private VideoTrack video;
+	private MarvinVideoInterface videoInterface;
+	private MarvinImage frame;
+	private Keyframe[] keyframes;
 
-	public Video(VideoTrack videoTrack, String location) {
-		Keyframe[] keyframes;
+	public Video(String location) {
+		try {
+			videoInterface = new MarvinJavaCVAdapter();
+			videoInterface.loadResource(location);
+
+		} catch (MarvinVideoInterfaceException e) {
+			Main.outputError(e);
+		}
+
+		videoInterface.getFrameNumber();
+
 	}
 
-	public void split() {}
+	public void split() {
+		try {
+			while (videoInterface.getFrame() != null) {
+				frame = videoInterface.getFrame();
+				if (videoInterface.getFrameNumber() == 10) {
+					// do fun stuff, and edit the if statement of course to accept any multiple of 10...
+				}
+			}
+		} catch (MarvinVideoInterfaceException e) {
+			Main.outputError(e);
+		}
+
+	}
 
 	public int getLength() {
 		return this.length;
@@ -32,14 +58,6 @@ public class Video {
 
 	public void setName(String name) {
 		this.name.set(name);
-	}
-
-	public VideoTrack getVideo() {
-		return video;
-	}
-
-	public void setVideo(VideoTrack video) {
-		this.video = video;
 	}
 
 	public String getLocation() {
