@@ -26,17 +26,20 @@ public class ChooserController implements Initializable {
 
 	public void pickVideo() {
 		String location = "";
+		selectedVideo = new Video(location);
+		
 		selectedVideo.nameProperty().bind(nameField.textProperty());
+		
 		nameField.setText(selectedVideo.getName());
-		lengthText.setText("");
-		locationText.setText("");
+		lengthText.setText(Integer.toString(selectedVideo.getLength()));
+		locationText.setText(selectedVideo.getLocation());
 
 	}
 
 	public void run() {
 		if (selectedVideo != null) {
-			setSceneActive(false);
 			selectedVideo.nameProperty().unbind();
+			setSceneActive(false);
 
 		} else {
 			Main.outputWarning("Please pick a video");
