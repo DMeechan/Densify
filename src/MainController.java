@@ -26,8 +26,6 @@ public class MainController extends Stage {
 		FXMLLoader chooserFXMLLoader = new FXMLLoader(getClass().getResource("Chooser.fxml"));
 		//
 		//pane.getChildren().remove(node);
-
-
 		//
 		try {
 			pane.getChildren().add(chooserFXMLLoader.load());

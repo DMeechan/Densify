@@ -1,7 +1,6 @@
 import javafx.beans.property.BooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -26,11 +25,7 @@ public class ChooserController implements Initializable {
 	}
 
 	public void pickVideo() {
-		// select video
-		com.sun.media.jfxmedia.track.VideoTrack videoTrack = null;
-		// need to fix this video track part
-
-		//selectedVideo = new Video(videoTrack, "");
+		String location = "";
 		selectedVideo.nameProperty().bind(nameField.textProperty());
 		nameField.setText(selectedVideo.getName());
 		lengthText.setText("");
@@ -44,7 +39,7 @@ public class ChooserController implements Initializable {
 			selectedVideo.nameProperty().unbind();
 
 		} else {
-			new Alert(Alert.AlertType.WARNING, "Please pick a video");
+			Main.outputWarning("Please pick a video");
 		}
 	}
 
