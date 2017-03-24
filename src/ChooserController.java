@@ -1,4 +1,5 @@
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -8,7 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ChooserController implements Initializable {
-	private BooleanProperty sceneActive;
+	private BooleanProperty sceneActive = new SimpleBooleanProperty();
 	private Video selectedVideo;
 
 	@FXML Label lengthText, locationText;
@@ -24,8 +25,8 @@ public class ChooserController implements Initializable {
 		
 	}
 
-	public void pickVideo() {
-		String location = "";
+	@FXML public void clickPickVideoButton() {
+		String location = "C:/ProgramData/TechSmith/Camtasia Studio/Library 2.0/Animated Title/Out Of Sight.mp4";
 		selectedVideo = new Video(location);
 		
 		selectedVideo.nameProperty().bind(nameField.textProperty());

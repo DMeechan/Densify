@@ -1,5 +1,5 @@
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -14,8 +14,9 @@ public class MainController extends Stage {
 
 
 		//Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-		setTitle("Hello World");
-		//setScene(new Scene(root, 350, 400));
+		setTitle("Densify");
+		setScene(new Scene(pane, 350, 400));
+		loadChooserController();
 		show();
 		System.out.println("test");
 
@@ -30,7 +31,7 @@ public class MainController extends Stage {
 		try {
 			pane.getChildren().add(chooserFXMLLoader.load());
 		} catch (IOException e) {
-			new Alert(Alert.AlertType.ERROR, e.getMessage()).showAndWait();
+			Main.outputError(e);
 		}
 		chooserController = chooserFXMLLoader.getController();
 
