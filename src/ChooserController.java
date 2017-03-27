@@ -22,7 +22,7 @@ public class ChooserController implements Initializable {
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		clickPickVideoButton();
+		//clickPickVideoButton();
 	}
 
 	@FXML public void clickPickVideoButton() {
